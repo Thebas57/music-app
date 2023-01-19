@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { genres } from "../assets/constants";
 import SongCard from "../components/SongCard";
+import {
+  useGetTopChartsQuery
+} from "../redux/services/Spotify";
 
 const Discover = () => {
   const [genreSelect, setGenreSelect] = useState("Pop");
-  console.log(genreSelect);
+  const { data, isFetching, error } = useGetTopChartsQuery();
+  console.log(data, isFetching);
+
   return (
     <div className="discover-container">
       <div className="discover-header">
