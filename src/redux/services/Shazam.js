@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 /*
 const options = {
   method: "GET",
-  url: "https://spotify23.p.rapidapi.com/search/",
+  url: "https://shazam23.p.rapidapi.com/search/",
   params: {
     q: "<REQUIRED>",
     type: "multi",
@@ -12,7 +12,7 @@ const options = {
   },
   headers: {
     "X-RapidAPI-Key": "e6b3c3650bmsh26a32baf8d74458p197917jsn0ea4f9f8fbc3",
-    "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
+    "X-RapidAPI-Host": "shazam23.p.rapidapi.com",
   },
 };
 
@@ -28,10 +28,10 @@ fetch(url, {
   .catch((err) => console.error("error:" + err));
 */
 //Permet d'appeler le store
-export const spotifyApi = createApi({
-  reducerPath: "spotifyApi",
+export const shazamApi = createApi({
+  reducerPath: "shazamApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://spotify81.p.rapidapi.com",
+    baseUrl: "https://shazam-core.p.rapidapi.com/v1",
     prepareHeaders: (headers) => {
       headers.set(
         "X-RapidAPI-Key",
@@ -42,7 +42,7 @@ export const spotifyApi = createApi({
   }),
   endpoints: (builder) => ({
     getTopCharts: builder.query({
-      query: () => "/top_20_by_monthly_listeners",
+      query: () => "/charts/world",
     }),
     searchArtistByName: builder.query({
       query: (name) => `/search?q=odezenne&type=artists`,
@@ -50,4 +50,4 @@ export const spotifyApi = createApi({
   }),
 });
 
-export const { useGetTopChartsQuery, useSearchArtistByNameQuery } = spotifyApi;
+export const { useGetTopChartsQuery, useSearchArtistByNameQuery } = shazamApi;

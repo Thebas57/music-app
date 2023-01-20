@@ -1,7 +1,5 @@
 .discover-container {
-  background: linear-gradient(to bottom, #000000, #121286);
   display: flex;
-  height: 100vh;
   flex-direction: column;
   align-items: center;
 }
@@ -24,16 +22,11 @@
   }
 }
 
-.discover-songs{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 2rem;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    div{
-        flex: 0 0 18%; 
-    }
+.discover-songs {
+  display: flex;
+  justify-content:flex-start;
+  width: 80%;
+  margin: 2rem;
+  flex-wrap: wrap;
+  gap: 20px;
 }

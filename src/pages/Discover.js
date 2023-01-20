@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { genres } from "../assets/constants";
+import Error from "../components/Error";
+import Loader from "../components/Loader";
 import SongCard from "../components/SongCard";
-import {
-  useGetTopChartsQuery
-} from "../redux/services/Spotify";
+import { useGetTopChartsQuery } from "../redux/services/Shazam";
 
 const Discover = () => {
   const [genreSelect, setGenreSelect] = useState("Pop");
   const { data, isFetching, error } = useGetTopChartsQuery();
   console.log(data, isFetching);
+
+  if (isFetching) return <Loader title="Chargement des musiques..." />;
+
+  if (error) return <Error />;
 
   return (
     <div className="discover-container">
@@ -28,8 +32,8 @@ const Discover = () => {
         </select>
       </div>
       <div className="discover-songs">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((song, i) => (
-          <SongCard key={song} song={song} i={i} />
+        {data?.map((song, i) => (
+          <SongCard key={song.key} song={song} i={i} />
         ))}
       </div>
     </div>
