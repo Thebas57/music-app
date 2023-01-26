@@ -1,16 +1,15 @@
 .song-card {
-  flex: 18%;
+  width: 12%;
   background-color: rgba(240, 248, 255, 0.229);
-  height: 100%;
   padding: 15px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   justify-content: flex-start;
   text-align: left;
   cursor: pointer;
   max-width: 21%;
+  gap: 10px;
   .img-song {
     width: 100%;
     position: relative;
@@ -36,6 +35,10 @@
       width: 100%;
       border-radius: 10px;
     }
+    .active-song {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.447);
+    }
   }
 }
 
@@ -43,23 +46,32 @@
   font-family: $font-1;
   font-weight: 500;
   font-size: 1.2rem;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 3px;
 }
 
 p {
   font-family: $font-1;
   font-size: 0.8rem;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 3px;
 }
 
 @media screen and (max-width: 1200px) {
   .song-card {
-    flex: 25%;
-    max-width: 28%;
+    width: 18%;
   }
 }
 
 @media screen and (max-width: 800px) {
   .song-card {
-    flex: 35%;
-    max-width: 50%;
+    width: 38%;
+    max-width: inherit;
   }
 }

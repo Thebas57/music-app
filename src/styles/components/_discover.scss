@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+.discover-flex{
+  display: flex;
+  align-items: center;
+}
+
 .discover-header {
   margin: 2rem;
 }
@@ -24,8 +29,8 @@
 
 .discover-songs {
   display: flex;
-  justify-content:flex-start;
-  width: 80%;
+  justify-content:center;
+  width: 95%;
   margin: 2rem;
   flex-wrap: wrap;
   gap: 20px;
