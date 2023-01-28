@@ -1,0 +1,43 @@
+.sidebar-container {
+  position: absolute;
+  right: 0;
+}
+
+.icon-mobile {
+  font-size: 1.2rem;
+  padding: 10px 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.menu-mobile {
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #ffffffa1, #2a2a8099);
+  position: fixed;
+  z-index: 10;
+  animation: slide 0.3s ease-in-out;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

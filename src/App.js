@@ -9,6 +9,7 @@ function App() {
   console.log(activeSong);
   return (
     <div className="App">
+      <SideBar />
       <Discover />
       {activeSong?.title && <MusicPlayer />}
     </div>
