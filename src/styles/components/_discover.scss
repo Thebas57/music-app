@@ -2,9 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+  padding-left: 110px;
 }
 
-.discover-flex{
+.discover-flex {
   display: flex;
   align-items: center;
 }
@@ -29,9 +31,15 @@
 
 .discover-songs {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   width: 95%;
   margin: 2rem;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .discover-container {
+    padding-left: 0;
+  }
 }
