@@ -4,6 +4,7 @@
   align-items: center;
   color: white;
   padding-left: 110px;
+  width: 80%;
 }
 
 .discover-flex {
@@ -41,5 +42,6 @@
 @media screen and (max-width: 1200px) {
   .discover-container {
     padding-left: 0;
+    width: 100%;
   }
 }

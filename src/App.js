@@ -8,6 +8,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import TopPlay from "./components/TopPlay";
 
 function App() {
   const { activeSong } = useSelector((state) => state.player);
@@ -16,6 +17,7 @@ function App() {
     <Router>
       <div className="App">
         <SideBar />
+        <TopPlay />
         {activeSong?.title && <MusicPlayer />}
         <Switch>
           <Route exact path="/" component={Discover} />

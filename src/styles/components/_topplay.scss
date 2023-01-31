@@ -1,0 +1,74 @@
+.topplay-container {
+  color: white;
+}
+
+.content-tp-artists{
+    margin: 0 10px;
+    .artist-img{
+        border-radius: 100px;
+    }
+}
+
+.header-tp {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 2.2rem 10px;
+}
+
+.title-tp {
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-family: $font-1;
+}
+
+.titre-card {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  svg {
+    font-size: 3rem;
+  }
+  .top {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  img {
+    height: 60px;
+    border-radius: 10px;
+  }
+  .info-tp-title {
+    flex: 80%;
+    display: flex;
+    flex-direction: column;
+    .title-titre {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+  &:hover{
+    background-color: grey;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .topplay-container {
+    position: fixed;
+    right: 0;
+    color: white;
+    width: 25%;
+  }
+  .header-tp {
+    margin: 0 10px;
+    padding-top: 10px;
+  }
+  .titre-card{
+    padding: 5px 0;
+  }
+  .content-tp {
+    padding: 1rem;
+  }
+}
