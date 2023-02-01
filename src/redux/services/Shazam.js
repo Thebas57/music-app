@@ -1,32 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-/*
-const options = {
-  method: "GET",
-  url: "https://shazam23.p.rapidapi.com/search/",
-  params: {
-    q: "<REQUIRED>",
-    type: "multi",
-    offset: "0",
-    limit: "10",
-    numberOfTopResults: "5",
-  },
-  headers: {
-    "X-RapidAPI-Key": "e6b3c3650bmsh26a32baf8d74458p197917jsn0ea4f9f8fbc3",
-    "X-RapidAPI-Host": "shazam23.p.rapidapi.com",
-  },
-};
 
-const params = new URLSearchParams(options.params);
-const url = options.url + "?" + params.toString();
-
-fetch(url, {
-  method: options.method,
-  headers: options.headers,
-})
-  .then((res) => res.json())
-  .then((json) => console.log(json))
-  .catch((err) => console.error("error:" + err));
-*/
 //Permet d'appeler le store
 export const shazamApi = createApi({
   reducerPath: "shazamApi",
@@ -44,10 +17,16 @@ export const shazamApi = createApi({
     getTopCharts: builder.query({
       query: () => "/charts/world",
     }),
+    getSongDetail: builder.query({
+      query: ({ songId }) => `/tracks/details?track_id=${songId}`,
+    }),
+    getRelatedSong: builder.query({
+      query: ({ songId }) => `/tracks/related?track_id=${songId}`,
+    }),
     searchArtistByName: builder.query({
       query: (name) => `/search?q=odezenne&type=artists`,
     }),
   }),
 });
 
-export const { useGetTopChartsQuery, useSearchArtistByNameQuery } = shazamApi;
+export const { useGetTopChartsQuery, useSearchArtistByNameQuery, useGetSongDetailQuery, useGetRelatedSongQuery } = shazamApi;
