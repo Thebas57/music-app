@@ -1,22 +1,44 @@
 import React, { useRef, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Error from "../components/Error";
 import Loader from "../components/Loader";
 import RelatedSong from "../components/RelatedSong";
-import { useGetRelatedSongQuery, useGetSongDetailQuery } from "../redux/services/Shazam";
+import { playPause, setActiveSong } from "../redux/features/playerSlice";
+import {
+  useGetRelatedSongQuery,
+  useGetSongDetailQuery,
+} from "../redux/services/Shazam";
 
 const SongDetail = () => {
+  const dispatch = useDispatch();
   const { songId } = useParams();
   const { data, isFetching, error } = useGetSongDetailQuery({ songId });
-  const { data : dataRelated, isFetching : isFetchingRelated } = useGetRelatedSongQuery({ songId });
+  const { data: dataRelated, isFetching: isFetchingRelated } =
+    useGetRelatedSongQuery({ songId });
+  const { isPlaying, activeSong } = useSelector((state) => state.player);
   const divRef = useRef();
 
-  console.log(dataRelated);
+  const handlePause = () => {
+    dispatch(playPause(false));
+  };
+
+  const handlePlay = (song, i) => {
+    console.log("play", song, activeSong, i, isPlaying);
+    dispatch(setActiveSong({ song, data, i }));
+    dispatch(playPause(true));
+  };
+
+  console.log(data);
 
   useEffect(() => {
     if (divRef.current) divRef.current.scrollIntoView({ behavior: "smooth" });
   });
 
-  if (isFetching && isFetchingRelated) return <Loader title="Chargement de la musique" />;
+  if (isFetching && isFetchingRelated)
+    return <Loader title="Chargement de la musique" />;
+
+  if (error) return <Error />;
 
   return (
     <div ref={divRef} className="song-container">
@@ -39,7 +61,7 @@ const SongDetail = () => {
           <p>Aucune parole pour cette musique</p>
         )}
       </div>
-      <RelatedSong songs={dataRelated} />
+      <RelatedSong data={dataRelated} isPlaying={isPlaying} activeSong={activeSong} handlePause={handlePause} handlePlay={handlePlay} />
     </div>
   );
 };
