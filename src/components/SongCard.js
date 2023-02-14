@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import PlayPause from "./PlayPause";
 
@@ -41,7 +42,14 @@ const SongCard = ({ song, activeSong, isPlaying, i, data }) => {
           <span>zefze</span>
         )}
       </div>
-      <span className="title-song">{song.title}</span>
+      <NavLink
+        className="navLink navTitle"
+        key={song.name}
+        to={"/song/" + song.key}
+        exact
+      >
+        <span className="title-song">{song.title}</span>
+      </NavLink>
       <p>{song.subtitle}</p>
     </div>
   );
