@@ -48,8 +48,8 @@ const SongDetail = () => {
           <img src={data?.images?.coverart} alt="song" />
         </div>
         <div className="infodetail">
-          <span className="title">{data.title}</span>
-          <span>{data.subtitle}</span>
+          <span className="title">{data?.title}</span>
+          <span>{data?.subtitle}</span>
           <span>{data?.genres?.primary}</span>
         </div>
       </div>
