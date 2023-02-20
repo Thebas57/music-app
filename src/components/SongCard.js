@@ -5,10 +5,10 @@ import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import PlayPause from "./PlayPause";
 
 const SongCard = ({ song, activeSong, isPlaying, i, data }) => {
+
   const dispatch = useDispatch();
 
   const handlePause = () => {
-    console.log("pause", song, activeSong, i, isPlaying);
     dispatch(playPause(false));
   };
 
@@ -50,7 +50,14 @@ const SongCard = ({ song, activeSong, isPlaying, i, data }) => {
       >
         <span className="title-song">{song.title}</span>
       </NavLink>
-      <p>{song.subtitle}</p>
+      <NavLink
+        className="navLink navTitle"
+        key={song.name}
+        to={song.artists ? "/artist/" + song.artists[0].adamid : "/top-artists"}
+        exact
+      >
+        <p>{song.subtitle}</p>
+      </NavLink>
     </div>
   );
 };

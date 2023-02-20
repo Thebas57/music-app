@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import TopPlay from "./components/TopPlay";
 import SongDetail from "./pages/SongDetail";
+import ArtistDetail from "./pages/ArtistDetail";
 
 function App() {
   const { activeSong } = useSelector((state) => state.player);
@@ -24,7 +25,7 @@ function App() {
           <Route exact path="/" component={Discover} />
           <Route exact path="/top-artists" component={Discover} />
           <Route path="/song/:songId" component={SongDetail} />
-          <Route exact path="/around-you" component={Discover} />
+          <Route path="/artist/:artistId" component={ArtistDetail} />
           <Route exact path="/top-charts" component={Discover} />
           <Redirect to="/" />
         </Switch>

@@ -24,12 +24,9 @@ const SongDetail = () => {
   };
 
   const handlePlay = (song, i) => {
-    console.log("play", song, activeSong, i, isPlaying);
     dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
   };
-
-  console.log(data);
 
   useEffect(() => {
     if (divRef.current) divRef.current.scrollIntoView({ behavior: "smooth" });

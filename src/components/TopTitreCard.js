@@ -22,11 +22,7 @@ const TopTitreCard = ({ song, activeSong, isPlaying, i, data, isRelated }) => {
   return (
     <div className={isRelated ? "titre-card isRelated" : "titre-card"}>
       <span className="top">{i}.</span>
-      {song.images ? (
-        <img src={song.images.coverart} alt="song" />
-      ) : (
-        <span>zefze</span>
-      )}
+      {song.images ? <img src={song.images.coverart} alt="song" /> : <p></p>}
       <div className="info-tp-title">
         <NavLink
           className="navLink"
@@ -38,6 +34,7 @@ const TopTitreCard = ({ song, activeSong, isPlaying, i, data, isRelated }) => {
         </NavLink>
 
         <span className="title-artist">{song.subtitle}</span>
+        {!song.images && <h6>Api Payante pour ces informations</h6>}
       </div>
       <PlayPause
         song={song}
