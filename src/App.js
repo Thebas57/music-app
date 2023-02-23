@@ -12,6 +12,8 @@ import TopPlay from "./components/TopPlay";
 import SongDetail from "./pages/SongDetail";
 import ArtistDetail from "./pages/ArtistDetail";
 import AroundYou from "./pages/AroundYou";
+import TopArtist from "./pages/TopArtist";
+import TopCharts from "./pages/TopCharts";
 
 function App() {
   const { activeSong } = useSelector((state) => state.player);
@@ -24,10 +26,10 @@ function App() {
         {activeSong?.title && <MusicPlayer />}
         <Switch>
           <Route exact path="/" component={Discover} />
-          <Route exact path="/top-artists" component={Discover} />
+          <Route exact path="/top-artists" component={TopArtist} />
           <Route path="/song/:songId" component={SongDetail} />
           <Route path="/artist/:artistId" component={ArtistDetail} />
-          <Route exact path="/top-charts" component={Discover} />
+          <Route exact path="/top-charts" component={TopCharts} />
           <Route exact path="/around-you" component={AroundYou} />
           <Redirect to="/" />
         </Switch>

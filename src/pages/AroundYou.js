@@ -22,7 +22,7 @@ const AroundYou = () => {
         console.error(error);
       })
       .finally(() => {
-        setLoading(false);
+        setLoading(true);
       });
   });
 
