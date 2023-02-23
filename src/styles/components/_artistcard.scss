@@ -1,0 +1,82 @@
+.artist-card {
+  color: white;
+  width: 20%;
+  background-color: rgba(240, 248, 255, 0.229);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  cursor: pointer;
+  max-width: 21%;
+  gap: 10px;
+  .img-artist {
+    width: 100%;
+    position: relative;
+    height: auto;
+    display: flex;
+    &:hover {
+      .pause {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.447);
+      }
+    }
+    .pause {
+      font-size: 1.7rem;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      inset: 0;
+      opacity: 0;
+      border-radius: 10px;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .active-song {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.447);
+    }
+  }
+}
+
+.title-song {
+  font-family: $font-1;
+  font-weight: 500;
+  font-size: 1.2rem;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 3px;
+}
+
+.navTitle {
+  display: contents;
+}
+
+p {
+  font-family: $font-1;
+  font-size: 0.8rem;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 3px;
+}
+
+@media screen and (max-width: 1200px) {
+  .artist-card {
+    width: 18%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .artist-card {
+    width: 38%;
+    max-width: inherit;
+  }
+}

@@ -54,10 +54,7 @@ export const {
   useSearchArtistByNameQuery,
   useGetSongDetailQuery,
   useGetRelatedSongQuery,
-  useGetSongCountryQuery
+  useGetSongCountryQuery,
 } = shazamApi;
 
-export const {
-  useGetArtistDetailQuery
-} = shazamApiArtist;
-
+export const { useGetArtistDetailQuery } = shazamApiArtist;
