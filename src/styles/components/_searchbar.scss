@@ -1,0 +1,24 @@
+.searchbar-container{
+    align-items: start;
+    padding-left: 200px;
+}
+
+form{
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    input{
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .searchbar-container {
+      padding-left: 20px;
+      width: 100%;
+    }
+  }
+  
