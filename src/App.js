@@ -18,7 +18,6 @@ import SearchBar from "./components/SearchBar";
 
 function App() {
   const { activeSong } = useSelector((state) => state.player);
-  console.log(activeSong);
   return (
     <Router>
       <div className="App">
