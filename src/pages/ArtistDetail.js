@@ -18,8 +18,6 @@ const ArtistDetail = () => {
   const { isPlaying, activeSong } = useSelector((state) => state.player);
   const divRef = useRef();
 
-  console.log(data)
-
   useEffect(() => {
     if (divRef.current) divRef.current.scrollIntoView({ behavior: "smooth" });
   });

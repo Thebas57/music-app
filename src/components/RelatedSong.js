@@ -4,7 +4,6 @@ import TopTitreCard from "./TopTitreCard";
 
 const RelatedSong = ({ activeSong, isPlaying, data, handlePause, handlePlay }) => {
   const dispatch = useDispatch();
-  console.log(data);
   return (
     <div className="related-container">
       <span className="title">Titres similaires</span>

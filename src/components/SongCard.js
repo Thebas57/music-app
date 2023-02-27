@@ -13,7 +13,6 @@ const SongCard = ({ song, activeSong, isPlaying, i, data }) => {
   };
 
   const handlePlay = () => {
-    console.log("play", song, activeSong, i, isPlaying);
     dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
   };
@@ -23,7 +22,7 @@ const SongCard = ({ song, activeSong, isPlaying, i, data }) => {
       <div className="img-song">
         <div
           className={
-            isPlaying && activeSong?.title === song.title
+            isPlaying && activeSong?.key === song.key
               ? "pause active-song"
               : "pause"
           }

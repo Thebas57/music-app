@@ -9,12 +9,10 @@ const TopTitreCard = ({ song, activeSong, isPlaying, i, data, isRelated }) => {
 
   i = i + 1;
   const handlePause = () => {
-    console.log("pause", song, activeSong, i, isPlaying);
     dispatch(playPause(false));
   };
 
   const handlePlay = () => {
-    console.log("play", song, activeSong, i, isPlaying);
     dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
   };

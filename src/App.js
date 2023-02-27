@@ -15,6 +15,7 @@ import AroundYou from "./pages/AroundYou";
 import TopArtist from "./pages/TopArtist";
 import TopCharts from "./pages/TopCharts";
 import SearchBar from "./components/SearchBar";
+import Search from "./pages/Search";
 
 function App() {
   const { activeSong } = useSelector((state) => state.player);
@@ -32,6 +33,7 @@ function App() {
           <Route path="/artist/:artistId" component={ArtistDetail} />
           <Route exact path="/top-charts" component={TopCharts} />
           <Route exact path="/around-you" component={AroundYou} />
+          <Route exact path="/search/:search" component={Search} />
           <Redirect to="/" />
         </Switch>
       </div>
