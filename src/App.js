@@ -14,6 +14,7 @@ import ArtistDetail from "./pages/ArtistDetail";
 import AroundYou from "./pages/AroundYou";
 import TopArtist from "./pages/TopArtist";
 import TopCharts from "./pages/TopCharts";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   const { activeSong } = useSelector((state) => state.player);
@@ -22,6 +23,7 @@ function App() {
     <Router>
       <div className="App">
         <SideBar />
+        <SearchBar />
         <TopPlay />
         {activeSong?.title && <MusicPlayer />}
         <Switch>
